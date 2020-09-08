@@ -1,1 +1,2 @@
-# ads_covid-19
+# Applied Data Science on COVID-19 data
+This project is aim to show the data of confirmed cases and the doubling rates in different country. This project was worked by applying a cross industry standard process, it covers the full walkthrough of: automated data gathering, data transformations, filtering and machine learning to approximating the doubling time, and (static) deployment of responsive dashboard.
