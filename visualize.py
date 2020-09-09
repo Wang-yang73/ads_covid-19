@@ -1,3 +1,4 @@
+# %load ../src/visualization/visualize.py
 import pandas as pd
 import numpy as np
 
@@ -37,7 +38,7 @@ app.layout=html.Div([
     dcc.Dropdown(
         id='country_drop_down',
         options=[{'label':each, 'value':each} for each in df_input_large['country'].unique()],
-        value=['US','Ukraine','Georgia'], #pre-selected
+        value=['US','Georgia'], #pre-selected
         multi=True
     ),
 
@@ -86,8 +87,6 @@ def update_figure(country_list,show_doubling):
             }
 
     traces=[]
-    sir_data=[]
-    #pd.DataFrame(country_list).head()
     
     for each in country_list:
 
@@ -100,11 +99,6 @@ def update_figure(country_list,show_doubling):
 
         
         if show_doubling=='SIR_spread_model':
-            #df_plot[show_doubling]=np.nan
-
-            #df_plot[show_doubling]=np.append(np.zeros(df_plot.shape[0]-len(SIR_spread_model[each])),SIR_spread_model[each])
-            
-            #df_plot[show_doubling][0:SIR_idx[each]-1]=np.nan
             
             df_plot[show_doubling]=np.append(np.zeros(SIR_idx[each]+1),total_confirmed_in_country[each][SIR_idx[each]:])
             df_plot[show_doubling][0:SIR_idx[each]+1]=np.nan
