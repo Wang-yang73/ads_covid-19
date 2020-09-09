@@ -40,7 +40,7 @@ beta_max=0.55
 beta_min=0.115
 gamma=0.1
 
-ydata = np.array(df_Spain.number[35:])
+ydata = np.array(df_Spain.number[35:230])
 t=np.arange(len(ydata))
 
 N0=16000000
